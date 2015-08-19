@@ -1,7 +1,7 @@
 class Character < ActiveRecord::Base
   belongs_to :user
   belongs_to :campaign
-  # has_and_belongs_to_many :encounters
+  has_and_belongs_to_many :encounters
 
   validates :name, presence: true
   validates :total_hp, presence: true

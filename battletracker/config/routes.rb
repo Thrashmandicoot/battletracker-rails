@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'campaigns/index'
+
+  get 'campaigns/characters'
+
+  get 'campaigns/edit'
+
+  get 'campaigns/new'
+
+  get 'campaigns/_form'
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
