@@ -1,0 +1,20 @@
+<%= form_for @character do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label "class" %>
+<%= f.text_field :job %>
+
+<%= f.label :total_hp %>
+<%= f.number_field :total_hp %>
+
+<%= f.label :armor_class %>
+<%= f.number_field :armor_class %>
+
+<%= f.label :initiative %>
+<%= f.number_field :initive %>
+
+<%= f.submit %>
+
+<% end %>

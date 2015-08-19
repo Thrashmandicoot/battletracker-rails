@@ -10,6 +10,15 @@ Rails.application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   # resources :sessions
+
+  post "sessions" => "sessions#create"
+
+  resources :characters
+
+  resources :campaigns do
+    resources :encounters
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

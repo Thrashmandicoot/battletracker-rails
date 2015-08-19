@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819181131) do
+ActiveRecord::Schema.define(version: 20150819184636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "characters", force: true do |t|
+    t.string   "name"
+    t.string   "job"
+    t.integer  "total_hp"
+    t.integer  "current_hp"
+    t.integer  "armor_class"
+    t.integer  "initiative"
+    t.boolean  "alive"
+    t.integer  "user_id"
+    t.integer  "campaign_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "characters", ["campaign_id"], name: "index_characters_on_campaign_id", using: :btree
+  add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"
