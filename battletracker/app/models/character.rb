@@ -7,7 +7,6 @@ class Character < ActiveRecord::Base
   validates :total_hp, presence: true
   validates :armor_class, presence: true
   validates :initiative, presence: true
-  validates :user_id, presence: true
 
   # def reset_current_hp
   #   hp = total_hp

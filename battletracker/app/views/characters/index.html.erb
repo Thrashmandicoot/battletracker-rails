@@ -23,10 +23,10 @@
       <td><%= character.armor_class %></td>
       <td><%= character.initiative %></td>
       <td>
-        <a class="ajax pure-button pure-button-active" href='/characters/<%= character.id %>/edit'>Edit Character</a>
+        <%= button_to "Edit Character",{ action: 'edit', id: character.id }, method: :get, class: "pure-button pure-button-active" %>
       </td>
       <td>
-        <a class="pure-button pure-button-active" href='/characters/<%= character.id %>/delete'>Delete</a>
+        <%= button_to "Delete Character",{ action: 'destroy', id: character.id }, method: :delete, data: { confirm: "Are you sure?"}, class: "pure-button pure-button-active" %>
       </td>
     </tr>
   </tbody>
@@ -34,4 +34,4 @@
 </table>
 
 </br>
-<a class="ajax pure-button pure-button-active" href='/characters/new'>Add Character</a>
+<%= button_to "Add Character", new_character_path, method: :get, class: "pure-button pure-button-active" %>
