@@ -2,17 +2,14 @@ class CharactersController < ApplicationController
   before_action :bounce
 
   def index
-    # bounce
     @user = current_user
   end
 
   def new
-    # bounce
     @character = Character.new
   end
 
   def create
-    # bounce
     @character = Character.new(character_params)
     if @character.save
       current_user.characters << @character
@@ -24,19 +21,16 @@ class CharactersController < ApplicationController
   end
 
   def destroy
-    # bounce
     Character.find_by(id: params[:id]).destroy
     redirect_to characters_path
   end
 
   def edit
-    # bounce
     @character = Character.find_by(id: params[:id])
     # @id = params[:id]
   end
 
   def update
-    # bounce
     @character = Character.find_by(id: params[:id])
     if @character.update(character_params)
       redirect_to characters_path

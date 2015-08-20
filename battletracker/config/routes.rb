@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
-  get 'campaigns/index'
+  # get 'campaigns/index'
 
-  get 'campaigns/characters'
 
-  get 'campaigns/edit'
-
-  get 'campaigns/new'
-
-  get 'campaigns/_form'
-
-  get 'welcome/index'
+  # get 'campaigns/edit'
+  #
+  # get 'campaigns/new'
+  #
+  # get 'campaigns/_form'
+  #
+  # get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
 
   resources :characters
 
+  get "campaigns/:campaign_id/characters" => "campaigns#characters", :as => "campaign_characters"
   resources :campaigns do
     resources :encounters
   end
